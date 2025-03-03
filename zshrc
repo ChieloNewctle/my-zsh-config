@@ -30,6 +30,10 @@ if which starship >/dev/null; then
   eval "$(starship init zsh)"
 fi
 
+if which atuin >/dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
 # select word style
 autoload -U select-word-style
 select-word-style bash
