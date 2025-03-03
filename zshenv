@@ -35,3 +35,8 @@ if [[ -d "${GOENV_ROOT}/bin" ]]; then
   eval "$(goenv init - zsh)"
   export PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
 fi
+
+# direnv
+if which direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
