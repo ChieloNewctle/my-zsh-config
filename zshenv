@@ -1,3 +1,5 @@
+skip_global_compinit=1
+
 # user basic env
 if [[ -e "${HOME}/.zsh_custom_env" ]]; then
   source "${HOME}/.zsh_custom_env"
