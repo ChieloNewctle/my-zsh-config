@@ -30,8 +30,23 @@ if which starship >/dev/null; then
   eval "$(starship init zsh)"
 fi
 
+# atuin (history)
 if which atuin >/dev/null; then
   eval "$(atuin init zsh)"
+fi
+
+# zoxide
+if which zoxide >/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# eza
+if which eza >/dev/null; then
+  alias ls="eza"
+fi
+EZA_ROOT="${HOME}/.eza"
+if [[ -d "${EZA_ROOT}" ]]; then
+  export FPATH="${EZA_ROOT}/completions/zsh:${FPATH}"
 fi
 
 # select word style
