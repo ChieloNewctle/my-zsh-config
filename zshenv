@@ -27,13 +27,10 @@ if [[ -d "${NODENV_ROOT}/bin" ]]; then
   export PATH="$(nodenv prefix)/bin:${PATH}"
 fi
 
-# goenv
-export GOENV_ROOT="${HOME}/.goenv"
-export GOENV_GOPATH_PREFIX="${HOME}/.go"
-if [[ -d "${GOENV_ROOT}/bin" ]]; then
-  export PATH="${GOENV_ROOT}/bin:${PATH}"
-  eval "$(goenv init - zsh)"
-  export PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
+# golang
+if [[ -d "${HOME}/.go/current" ]]; then
+  export GOROOT="${HOME}/.go/current"
+  export PATH="${GOROOT}/bin:${PATH}"
 fi
 
 # direnv
