@@ -55,3 +55,8 @@ select-word-style bash
 
 # customization
 alias without_proxy='env http_proxy="" https_proxy=""'
+
+# nvim
+if which nvim >/dev/null; then
+  export EDITOR="$(which nvim)"
+fi
