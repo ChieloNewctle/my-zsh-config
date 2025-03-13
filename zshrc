@@ -1,7 +1,9 @@
 # terminal integration
-WEZTERM_SH_FILE="${HOME}/.config/zsh/wezterm.sh"
-if [[ -e "${WEZTERM_SH_FILE}" ]]; then
-  source "${WEZTERM_SH_FILE}"
+if [[ ! -n "${SSH_CONNECTION}" ]]; then
+  WEZTERM_SH_FILE="${HOME}/.config/zsh/wezterm.sh"
+  if [[ -e "${WEZTERM_SH_FILE}" ]]; then
+    source "${WEZTERM_SH_FILE}"
+  fi
 fi
 
 # zim
@@ -60,3 +62,5 @@ alias without_proxy='env http_proxy="" https_proxy=""'
 if which nvim >/dev/null; then
   export EDITOR="$(which nvim)"
 fi
+
+bindkey -e
