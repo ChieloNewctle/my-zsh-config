@@ -28,9 +28,9 @@ if [[ -d "${NODENV_ROOT}/bin" ]]; then
 fi
 
 # golang
-if [[ -d "${HOME}/.go/current" ]]; then
-  export GOROOT="${HOME}/.go/current"
-  export PATH="${GOROOT}/bin:${PATH}"
+if [[ -d "${HOME}/.go" ]]; then
+  export GOPATH="${HOME}/.go"
+  export PATH="${GOPATH}/bin:${PATH}"
 fi
 
 # direnv
